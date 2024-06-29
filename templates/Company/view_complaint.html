@@ -1,0 +1,37 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/ComplaintSearch#about">
+  <table width="262" border="1" align="center" class="table table-striped">
+    <tr>
+      <td>Date</td>
+       <td colspan="3"> <input type="date" name="textfield" class="form-control"/></td>
+       <td><input type="submit" name="Submit" value="Search" class="btn btn-outline-primary" /></td>
+
+
+    </tr>
+    <tr>
+      <th>SI/No</th>
+      <th>NAME</th>
+      <th>COMPLAINT</th>
+      <th>DATE</th>
+      <th>REPLY</th>
+    </tr>
+      {% for i in val5 %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td>{{ i.user_table.fname }} {{ i.user_table.lname }}&nbsp;</td>
+      <td>{{ i.complaint }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td>
+         <td>{% if i.reply == "pending" %}
+      <a href="ComplaintReply/{{ i.id }}#about" class="btn btn-secondary">Reply</a></td>
+      {% else  %}{{ i.reply }}
+    {% endif %}
+    </tr>
+             {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

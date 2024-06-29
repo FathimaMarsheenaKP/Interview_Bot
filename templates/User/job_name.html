@@ -1,0 +1,16 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="ViewDetails/">
+  <table width="200" border="1" class="table table-striped">
+    <tr>
+        <th>Job details:
+        </th>
+    </tr>
+      <tr><td>{{ val.details }} </td></tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="addqns">
+  <table width="200" border="1" align="center" class="table table-hover">
+    <tr>
+      <th scope="row">JOB</th>
+      <td>
+        <select name="select" checked class="form-control mb-2 mr-sm-2">
+            {% for i in val %}
+            <option value="{{ i.id }}"> {{ i.job }}</option>
+            {% endfor %}
+        </select>
+     </td>
+    </tr>
+    <tr>
+      <th scope="row">QUESTIONS</th>
+      <td>
+          <textarea name="textfield" class="form-control" required></textarea>
+{#          <label>#}
+{#        <input type="text" name="textfield" required />#}
+{#      </label>#}
+          &nbsp;</td>
+    </tr>
+    <tr>
+      <th scope="row">ANSWERS</th>
+      <td>
+           <textarea name="textfield1" class="form-control" required></textarea>
+{#          &nbsp;<label>#}
+{#        <input type="text" name="textfield1" required />#}
+{#      </label>#}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">LEVEL</th>
+      <td>
+        <select name="select1" checked class="form-control mb-2 mr-sm-2">
+
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Expert">Expert</option>
+        </select>
+     </td>
+    </tr>
+    <tr>
+        <td></td>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

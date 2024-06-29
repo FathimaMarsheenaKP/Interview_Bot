@@ -1,0 +1,39 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" align="center" class="table table-hover">
+    <tr>
+      <td>Name:{{ val4.fname}} {{ val4.lname}}</td>
+    </tr>
+    <tr>
+      <td>Photo:<img src="{{ val4.photo.url }}" alt="error" width="100" height="120"></td>
+    </tr>
+    <tr>
+      <td>Place:{{ val4.place}}</td>
+    </tr>
+    <tr>
+      <td>Post:{{ val4.post}}</td>
+    </tr>
+    <tr>
+      <td>Pin:{{ val4.pin}}</td>
+    </tr>
+    <tr>
+      <td>Phone:{{ val4.phone_number}}</td>
+    </tr>
+    <tr>
+        <td>CV:<a  href="{{ val4.photo.url }}" download >Download</a></td>
+    </tr>
+    <tr>
+      <td>Email:{{ val4.email}}</td>
+    </tr>
+    <tr>
+        <td>Proof:<a href="{{ val4.proof.url}}"download>Download</a></td>
+    </tr>
+   
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

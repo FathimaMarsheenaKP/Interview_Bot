@@ -1,0 +1,22 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" align="center" class="table table-striped">
+     <tr>
+      <th>DETAILS</th>
+         <td></td>
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{i.details}}</td>
+      <td><a href="/edit_details/{{ i.id }}#about" class="btn btn-outline-primary">Edit</a></td>
+    </tr>
+{% endfor %}
+
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

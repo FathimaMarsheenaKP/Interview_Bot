@@ -1,0 +1,43 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/SearchJobRequest#about">
+  <table width="200" border="1" align="center" class="table table-striped">
+    <tr>
+        <td >job</td>
+<td colspan="2">
+    <input type="text" name="textfield" class="form-control"/></td>
+        <td><input type="submit" name="Submit" value="search" class="btn btn-outline-primary btn-lg"/>
+      </td>
+    </tr>
+    <tr>
+      <th><b>SI/NO</b></th>
+      <th><b>JOB</b></th>
+      <th><b>DATE</b></th>
+      <th><b>STATUS</b></th>
+    </tr>
+       {% for i in val11 %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>&nbsp;{{ i.job_table.job }}</td>
+      <td>{{ i.date }}&nbsp;&nbsp;</td>
+    <td>
+        {% if i.status == "Accepted" %}
+            {% if i.s == "0" %}
+        <a href="/selectqus/{{ i.id }}/{{ i.job_table.id }}#about">Attend Interview</a>
+                {% else %}
+                Attended
+                {% endif %}
+        {% else %}
+            {{ i.status }}
+        {% endif %}
+    </td>
+
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/sendreply#about">
+  <table width="200" border="1" align="center"  class="table table-striped">
+    <tr>
+      <th scope="row">Reply</th>
+      <td>
+        <input type="text" name="textfield" required  class="form-control mb-2 mr-sm-2"/>
+     </td>
+    </tr>
+    <tr>
+        <td></td>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Send" class="btn btn-secondary"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

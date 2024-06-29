@@ -1,0 +1,54 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/editqns#about">
+  <table width="200" border="1" align="center" class="table table-striped ">
+    <tr>
+      <th>JOB</th>
+      <td>
+        <select name="select" class="form-control mb-2 mr-sm-2" checked="">
+            {% for i in val %}
+            <option value="{{ i.id }}" {% if i.id == val1.job.id %} selected {% endif %}> {{ i.job }}</option>
+            {% endfor %}
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <th>QUESTIONS</th>
+      <td>
+                  <textarea name="txt" class="form-control" required>{{ oo.questions }}</textarea>
+
+{#        <input type="text" name="textfield" value="{{ oo.questions }}" class="form-control mb-2 mr-sm-2"/>#}
+     &nbsp;</td>
+    </tr>
+    <tr>
+      <th> ANSWERS </th>
+      <td>&nbsp;
+
+                  <textarea name="txt1" class="form-control" required>{{ oo.answers }}</textarea>
+{#        <input type="text" name="textfield1" value="{{ oo.answers }}" class="form-control mb-2 mr-sm-2"/>#}
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">LEVEL</th>
+      <td>
+        <select name="select1" checked class="form-control mb-2 mr-sm-2">
+
+            <option value="Beginner" {% if  oo.level  == "Beginner" %} selected {% endif %}>Beginner</option>
+            <option value="Intermediate" {% if  oo.level  == "Intermediate" %} selected {% endif %}>Intermediate</option>
+            <option value="Expert" {% if  oo.level  == "Expert" %} selected {% endif %}>Expert</option>
+        </select>
+     </td>
+    </tr>
+    <tr>
+        <td></td>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="update" class="btn btn-outline-primary"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

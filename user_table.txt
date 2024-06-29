@@ -1,0 +1,3 @@
+Executed SQL Statement : insert into `interviews`.`int_bot_app_user_table` (`fname`, `lname`, `photo`, `place`, `post`, `pin`, `phone_number`, `CV`, `email`, `proof`) values ('abc', 'xyz', 'jgcjg', 'nbij', 'hnkih', '4562', '5+65+5+', 'gtdutd', 'jyhfiyfy', 'hjgfxujt') 
+Error Number : 1265 
+Error Message: Data truncated for column 'phone_number' at row 1 

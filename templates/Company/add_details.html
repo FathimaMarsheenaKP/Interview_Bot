@@ -1,0 +1,23 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/AddDetails">
+  <table width="200" border="1" class="table table-hover">
+    <tr>
+      <th scope="row">Details</th>
+      <td>
+          <textarea name="txt" class="form-control" required ></textarea>
+    </td>
+    </tr>
+    <tr>
+        <td></td>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Add" class="btn btn-outline-primary"/>
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

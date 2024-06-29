@@ -1,0 +1,44 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/Job_Search#about">
+  <table width="337" border="1" align="center" class="table table-striped">
+    <tr>
+      <th>Job </th>
+     <td colspan="4"> <input type="text" name="textfield"class="form-control" /></td>
+
+          <td> <input name="Search" type="submit" id="Search" value="Search" class="btn btn-outline-primary" /></td>
+
+
+    </tr>
+    <tr>
+        <th><b>SI/NO</b></th>
+      <th><b>JOB</b></th>
+        <th><b>SALARY RANGE</b> </th>
+        <th><b>NUMBER OF POSITIONS</b> </th>
+      <th><b>TYPE</b> </th>
+
+    </tr>
+       {% for i in val10 %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td><a href="{% url  'JobDetails' id=i.id %}#about">{{ i.job }}</a></td>
+      <td>&nbsp;{{ i.salary_range }}</td>
+      <td>{{ i.number_of_positions}}&nbsp;</td>
+    <td>{{ i.type}}</td>
+
+    <td>
+     {% if i.status == "pending" %}
+             <a href="SendRequests/{{ i.id }}#about">Request</a>
+        {% else %} {{ i.status }} {% endif %}
+
+
+    &nbsp;</td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}
+{#{% url  'JobDetails' id=i.id %}#}

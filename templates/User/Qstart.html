@@ -1,0 +1,30 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+<body>
+ <form id="form1" name="form1" method="post" action="/main1#about">
+    <table width="200" border="1" align="center" class="table">
+        <tr>
+            <td>
+                 {{ q }}
+            </td>
+
+        </tr>
+       <tr>
+           <td>
+                <textarea  name="t" class="form-control" >{{ t }}</textarea>
+           </td>
+       </tr>
+        <tr>
+        </tr>
+       <tr align="center">
+
+           <td>
+               <input type="submit" class="btn btn-outline-primary" value="START" name="btn"/>
+               <input type="submit" class="btn btn-outline-primary" value="FINISH" name="btn"/>
+
+           </td>
+       </tr>
+     </table>
+</form>
+</body>
+{% endblock %}

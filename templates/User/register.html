@@ -1,0 +1,90 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="/Register_post">
+  <table width="200" border="1" align="center">
+    <tr>
+      <th scope="row">First Name</th>
+      <td><label>
+        <input type="text" name="textfield" required pattern = "[A-Z a-z .]"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Last Name</th>
+      <td><label>
+        <input type="text" name="textfield2"  pattern = "[A-Z a-z .]"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Photo</th>
+      <td><label>
+        <input type="file" name="file" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td><label>
+        <input type="text" name="textfield4" required pattern = "[A-Z a-z .]"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td><label>
+        <input type="text" name="textfield5" required pattern = "[A-Z a-z .]"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td><label>
+        <input type="text" name="textfield6" required pattern="[0-9]{6}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number </th>
+      <td><label>
+        <input type="text" name="textfield7"required pattern="[6789][0-9]{9}" />
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">CV</th>
+      <td><label>
+        <input type="file" name="file2" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><label>
+        <input type="email" name="textfield9" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Proof</th>
+      <td><label>
+        <input type="file" name="file3" required/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Username</th>
+      <td><label>
+        <input type="text" name="textfield11" required pattern = "[A-Z a-z  .]"/>
+      </label></td>
+    </tr>
+    <tr>
+      <th scope="row">Password </th>
+      <td><input type="password" name="textfield122" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" />
+      </td>
+    </tr>
+    <tr>
+      <th colspan="2" scope="row"><label>
+        <input type="submit" name="Submit" value="Submit" />
+      </label></th>
+    </tr>
+  </table>
+</form>
+</body>
+</html>

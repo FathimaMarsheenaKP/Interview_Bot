@@ -1,0 +1,27 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" align="center" class="table table-striped ">
+    <tr>
+        <th scope="col">SI/No</th>
+      <th scope="col">Questions</th>
+      <th scope="col">Result</th>
+      <th scope="col">Mark</th>
+      <th scope="col">Emotion</th>
+    </tr>
+      {% for i in val8 %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td>{{ i.QnA_table.questions }}&nbsp;</td>
+      <td>{{ i.result }}&nbsp;</td>
+      <td>{{ i.mark }}&nbsp;</td>
+        <td>{{ i.emotion }}&nbsp;</td>
+      {% endfor %}
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

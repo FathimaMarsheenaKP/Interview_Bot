@@ -1,0 +1,50 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="ManageJobSearch#about">
+  <table width="292" border="1" align="center" class="table table-hover table-striped">
+    <tr>
+      <td >Job</td>
+        <td colspan="3"><input type="text" name="textfield" class="form-control"/></td>
+
+       <td colspan="3"><select name="select1" class="form-control">
+            <option value="Open">Open</option>
+            <option value="Remote">Remote</option>
+        </select></td>
+        <td><input type="submit" name="Submit" value="Search" class="btn btn-outline-primary"/></td>
+
+
+    </tr>
+    <tr>
+      <th >SI/No</th>
+      <th >JOB</th>
+      <th >SALARY RANGE </th>
+      <th >VACANCY </th>
+      <th >TYPE</th>
+      <th >&nbsp;</th>
+        <th></th>
+        <th></th>
+    </tr>
+      {% for i in val %}
+    <tr >
+      <td >{{ forloop.counter }}</td>
+      <td><p><a href="{% url  'JobDetail' id=i.id %}#about" >{{ i.job }}</a></p><br></td>
+      <td>{{ i.salary_range}}</td>
+      <td>{{ i.number_of_positions}}&nbsp;</td>
+      <td>{{ i.type }}</td>
+      <td><a href="ViewDetails/{{ i.id }}#about" class="btn btn-outline-secondary">Add Details</a></td>
+        <td> <a href="{% url 'edit_job' id=i.id %}#about" class="btn btn-outline-secondary">edit</a></td>
+         <td><a href="{% url 'deletejob' id=i.id %}#about" class="btn btn-outline-secondary">delete</a></td>
+
+
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="8"><div align="center"><a href="AddJob#about" class="btn btn-outline-primary">ADD</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

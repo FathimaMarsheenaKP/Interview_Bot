@@ -1,0 +1,40 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/ManageQnASearch#about">
+  <table width="200" border="1" align="center" class="table table-striped ">
+    <tr>
+        <td ><h5 align="right">Job</h5></td>
+
+        <td colspan="4"><input type="text" name="textfield" class="form-control"/></td>
+        <td><input type="submit" name="Submit" value="Search" class="btn btn-outline-primary"/>
+      </td>
+    </tr>
+    <tr >
+      <th SCOPE="row">SI/No</th>
+      <th SCOPE="row">JOB</th>
+      <th SCOPE="row">QUESTIONS</th>
+      <th SCOPE="row">ANSWERS</th>
+      <th SCOPE="row">LEVEL</th>
+      <td>&nbsp;</td>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>&nbsp;{{ forloop.counter }}</td>
+      <td>{{ i.job_table.job }}&nbsp;</td>
+      <td>&nbsp;{{ i.questions }}</td>
+      <td>{{ i.answers }}&nbsp;</td>
+      <td>{{ i.level }}&nbsp;</td>
+      <td><p><a href="edit_qns/{{ i.id }}#about " class="btn btn-outline-secondary">edit</a></p>
+      <p><a href="{% url 'delete_qns' id=i.id %}#about" class="btn btn-outline-secondary">delete</a></p></td>
+    </tr>
+       {% endfor %}
+    <tr>
+      <td colspan="6"><div align="center"><a href="AddQnA#about" class="btn btn-outline-primary">Add</a></div></td>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

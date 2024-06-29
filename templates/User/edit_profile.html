@@ -1,0 +1,81 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" enctype="multipart/form-data" action="/ViewAddEditProfile#about">
+  <table width="200" border="1" align="center" class="table table-striped">
+    <tr>
+      <th scope="row">First name</th>
+      <td>
+        <input type="text" name="textfield" value="{{ val9.fname }} " class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Last name</th>
+      <td>
+        <input type="text" name="textfield2" value="{{ val9.lname }}" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Photo</th>
+      <td>
+          <img src="{{ val9.photo.url }}" width="100" height="100">
+        <input type="file" name="file" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Place</th>
+      <td>
+        <input type="text" name="textfield4"  value="{{ val9.place }} " class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Post</th>
+      <td>
+        <input type="text" name="textfield5"  value="{{ val9.post }}" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Pin</th>
+      <td>
+        <input type="text" name="textfield6"  value="{{ val9.pin }}" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Phone Number </th>
+      <td>
+        <input type="text" name="textfield7"  value="{{ val9.phone_number }}" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">CV</th>
+      <td>
+        <input type="file" name="file2" class="form-control"/>
+          <a href="{{ val9.CV.url }}" download class="btn btn-secondary">Download</a>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td>
+        <input type="text" name="textfield9"  value="{{ val9.email }}" class="form-control"/>
+      </td>
+    </tr>
+    <tr>
+      <th scope="row">Proof</th>
+      <td>
+        <input type="file" name="file3" class="form-control"/>
+                    <a href="{{ val9.proof }}" download class="btn btn-secondary">Download</a>
+      </td>
+    </tr>
+
+    <tr>
+        <td></td>
+      <th colspan="2" scope="row"><label>
+          <input type="submit" name="Submit" value="Update" class="btn btn-outline-primary"/>
+        <a href="#"></a></label></th>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

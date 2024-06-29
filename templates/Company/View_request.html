@@ -1,0 +1,42 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+
+<body>
+<form id="form1" name="form1" method="post" action="RequestSearch#about">
+  <table width="330" border="1" align="center" class="table table-striped">
+    <tr>
+      <td>Date</td>
+        <td colspan="3">   <input type="date" name="textfield" class="form-control"/></td>
+         <td><input type="submit" name="Submit" value="Search" class="btn btn-outline-primary" /></td>
+
+
+    </tr>
+    <tr>
+      <th scope="row" width="38">SI/No</th>
+      <th scope="row" width="60">NAME</th>
+      <th scope="row" width="22">JOB</th>
+      <th scope="row" width="32">DATE</th>
+      <th scope="row" width="73">STATUS</th>
+    </tr>
+      {% for i in val3 %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td><a href="ViewProfile/{{ i.user_table.id }}">{{ i.user_table.fname }} {{ i.user_table.lname }}</a></td>
+      <td>&nbsp;{{ i.job_table.job }}</td>
+      <td>{{ i.date }}&nbsp;</td>
+      <td>
+          {% if i.status == "Requested" %}
+          <p><a href="RequestAccept/{{ i.id }}#about">Accept</a></p>
+          <p><a href="RequestReject/{{ i.id }}#about">Reject</a></p>
+          {% elif i.status == "Accepted" %}Accepted
+          {% else  %}Rejected
+          {% endif %}
+      </td>
+    </tr>
+       {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

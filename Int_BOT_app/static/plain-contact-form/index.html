@@ -1,0 +1,36 @@
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Free Contact Form :: W3layouts</title>
+  <link rel="stylesheet" href="static/plain-contact-form/css/style.css">
+</head>
+
+<body>
+  <!-- contact1 -->
+  <section class="w3l-simple-contact-form1">
+    <div class="contact-form section-gap">
+      <div class="wrapper">
+        <div class="contact-form" style="max-width: 450px; margin: 0 auto;">
+          <div class="form-mid">
+            <form action="SendComplaint" method="post">
+              <div class="field">
+                <input type="text" class="form-control" name="w3lName" id="w3lName" placeholder="Name" required="">
+              </div>
+              <textarea name="w3lMessage" class="form-control" id="w3lMessage" placeholder="Message"
+                required=""></textarea>
+{#              <button type="submit" class="btn btn-contact" value="Send complaint">Send Message</button>#}
+                <input type="submit" name="Submit" value="Send complaint" class="btn btn-contact"/>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /contact1 -->
+</body>
+
+</html>

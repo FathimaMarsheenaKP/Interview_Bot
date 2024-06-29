@@ -1,0 +1,26 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <table width="200" border="1" align="center" class="table table-striped">
+    <tr>
+      <th scope="col">SI/No</th>
+      <th scope="col">NAME</th>
+      <th scope="col">FEEDBACK</th>
+      <th scope="col">RATING</th>
+      <th scope="col">DATE</th>
+    </tr>
+       {% for i in val6 %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td>&nbsp;{{ i.user_table.fname }} {{ i.user_table.lname }}</td>
+      <td>{{ i.feedback }}&nbsp;</td>
+        <td>{{ i.rating }}&nbsp;</td>
+      <td>{{ i.date }}&nbsp;</td></tr>
+                   {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

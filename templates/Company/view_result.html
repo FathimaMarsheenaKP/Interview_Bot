@@ -1,0 +1,56 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="ResultSearch#about">
+  <table width="340" border="1" align="center" class="table table-striped ">
+    <tr>
+      <td>Job</td>
+       <td colspan="3"><input type="text" name="textfield" class="form-control"/></td>
+        <td><input type="submit" name="Submit" value="Search" class="btn btn-outline-primary"  /></td>
+
+
+    </tr>
+    <tr>
+      <th>SI/NO</th>
+      <th>NAME</th>
+      <th >JOB</th>
+{#      <th >DATE</th>#}
+      <th>MARKS</th>
+      <th width="110">STATUS</th>
+
+    </tr>
+      {% for i in data %}
+    <tr>
+      <td>{{ forloop.counter }}&nbsp;</td>
+      <td>{{ i.sname }} </td>
+      <td>&nbsp;{{ i.job }}</td>
+{#      <td>{{ i.date }}&nbsp;</td>#}
+{#      <td>{{ i.per }}&nbsp;</td>#}
+      <td>{{ i.mark }}&nbsp;</td>
+
+      <td>{% if i.status == "pending" %}
+        <p><a href="ResultAccept/{{ i.id }}#about">Accept</a></p>
+           <p><a href="ResultReject/{{ i.id }}#about">Reject</a></p>
+     {% elif i.status == "Accepted" %}
+{#         Accepted#}
+<p><a href="ResultAccept/{{ i.id }}#about">Accept</a></p>
+           <p><a href="ResultReject/{{ i.id }}#about">Reject</a></p>
+          <a href="ViewMore/{{ i.id }}#about">view more</a>
+           {% elif i.status == "Selected" %}
+          Selected
+     {% else  %}
+        Rejected
+     {% endif %}</td>
+{#    {% if i.per != "Not attended" %}#}
+{#            <td><a href="ViewMore/{{ i.id }}#about">view more</a>  </td>#}
+{#        {% else %}#}
+{#            <td></td>#}
+{#        {% endif %}#}
+
+    </tr>
+      {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

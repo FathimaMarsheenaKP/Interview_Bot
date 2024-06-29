@@ -1,0 +1,31 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="SendComplaint#about">
+  <table width="200" border="1" align="center" class="table table-striped">
+    <tr>
+      <th><b>SI/NO</b></th>
+      <th><b>COMPLAINT</b></th>
+      <th><b>REPLY</b></th>
+    </tr>
+       {% for i in val %}
+           <tr>
+          <td>&nbsp;{{ forloop.counter }}</td>
+          <td>&nbsp;{{ i.complaint }}</td>
+          <td>&nbsp;{{ i.reply }}</td>
+        </tr>
+       {% endfor %}
+    <tr>
+        <td></td>
+      <td>
+        <div align="center">
+          <input type="submit" name="Submit" value="Send complaint" class="btn btn-outline-primary"/>
+          </div></td>
+        <td></td>
+    </tr>
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}

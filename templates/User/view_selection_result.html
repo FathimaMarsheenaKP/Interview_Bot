@@ -1,0 +1,30 @@
+{% extends 'User/user_index.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/SearchSelectionResultJob">
+  <table width="200" border="1" align="center"  class="table table-striped">
+    <tr>
+      <td>Job</td>
+        <td><input type="text" name="textfield" class="form-control"/></td>
+        <td> <input type="submit" name="Submit" value="Search" class="btn btn-outline-primary"/></td>
+
+
+    </tr>
+    <tr>
+      <th><b>SI/NO</b></th>
+      <th><b>JOB</b></th>
+      <th><b>STATUS</b></th>
+    </tr>
+      {% for i in val %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ i.job_table.job }}</td>
+      <td>{{ i.status }}&nbsp;</td>
+    </tr>
+        {% endfor %}
+  </table>
+</form>
+</body>
+{#</html>#}
+{% endblock %}
